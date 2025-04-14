@@ -2,6 +2,8 @@ FROM ghcr.io/jeffvli/feishin:latest
 
 COPY webApp.conf /etc/nginx/conf.d/webApp.conf
 
+COPY nginx.html /usr/share/nginx/html/nginx.html
+
 FROM scratch
 
 COPY --from=0 / /
