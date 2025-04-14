@@ -1,5 +1,7 @@
 # Feishin WebApp
 
+GitHub: https://github.com/Rexezuge-Build/Feishin-WebApp
+
 Upstream: https://github.com/jeffvli/feishin
 
 # Features
