@@ -20,7 +20,7 @@ ENV SERVER_LOCK="true"
 
 ENV SERVER_NAME="Navidrome"
 
-EXPOSE 443/tcp
+EXPOSE 80/tcp
 
 CMD ["nginx", "-g", "daemon off;"]
 
