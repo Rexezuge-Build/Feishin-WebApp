@@ -24,7 +24,6 @@ jobs:
       - name: Set Up SSH for Backup Repo
         env:
           SSH_PRIVATE_KEY: ${{ secrets.BACKUP_REPO_AZURE_DEVOPS_SSH_KEY }}
-          REMOTE_REPO_URL: ${{ secrets.BACKUP_REPO_AZURE_DEVOPS_REPO_URL }}
         run: |
           mkdir -p ~/.ssh
           echo "${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa
@@ -38,6 +37,8 @@ jobs:
           ssh-add ~/.ssh/id_rsa
 
       - name: Add SSH Remote and Push `main` Branch
+        env:
+          REMOTE_REPO_URL: ${{ secrets.BACKUP_REPO_AZURE_DEVOPS_REPO_URL }}
         run: |
           git remote add backup "${REMOTE_REPO_URL}"
           git push --force backup main:main
