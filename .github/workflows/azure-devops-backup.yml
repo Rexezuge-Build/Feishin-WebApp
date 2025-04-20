@@ -39,5 +39,5 @@ jobs:
 
       - name: Add SSH Remote and Push `main` Branch
         run: |
-          git remote add backup ${REMOTE_REPO_URL}
+          git remote add backup "${REMOTE_REPO_URL}"
           git push --force backup main:main
